@@ -1,7 +1,5 @@
 package com.foam.photo.controller;
 
-import org.springframework.boot.web.servlet.server.Session;
-import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +16,7 @@ public class LoginController {
         if (httpSession.getAttribute("loginUser")!=null){
             httpSession.removeAttribute("loginUser");
         }
+
         if (!StringUtils.isEmpty(username)&& "123".equals(password)){
             httpSession.setAttribute("loginUser",username);
             return "redirect:/index";
