@@ -1,14 +1,12 @@
 package com.foam.photo.controller;
 
-import org.springframework.boot.web.servlet.server.Session;
-import org.springframework.lang.Nullable;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.thymeleaf.util.StringUtils;
-
-import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {

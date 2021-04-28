@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><!-- namespace 写入 自己 dao 里的接口名称-->
+<mapper namespace="com.foam.photo.mapper.UserMapper">
+    <insert id="addUser" parameterType="User" >
+        insert into user_table(u_id, u_userName, u_password, u_nickName, u_gender, u_createDate, u_lastLoginDate,
+                               u_level)
+        VALUES (#{id}, #{userName}, #{password}, #{nickName}, #{nickName}, #{gender}, #{createDate}, #{lastLoginDate},
+                #{level});
+    </insert>
+    <update id="updateUser" parameterType="User" >
+        update user_table
+        set u_password=#{password},
+            u_nickName=#{nickName},
+            u_gender=#{gender},
+            u_lastLoginDate=#{lastLoginDate},
+            u_level= #{level}
+    </update>
+    <delete id="deleteUser" parameterType="int" >
+        delete
+        from user_table
+        where u_id = #{id};
+    </delete>
+    <select id="queryAllUser" resultType="User" >
+        select *
+        from user_table;
+    </select>
+    <select id="queryUserById" resultType="User" parameterType="int" >
+        select * from user_table where u_id=#{id};
+    </select>
+</mapper>
