@@ -27,8 +27,4 @@ public class MyMvcConfigure implements WebMvcConfigurer {
         registry.addViewController("/services").setViewName("services");
     }
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/login.html", "/user/login", "/", "/login");
-    }
 }
